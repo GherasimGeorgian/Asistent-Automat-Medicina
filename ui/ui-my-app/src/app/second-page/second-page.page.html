@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>secondPage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+
+  <ng-template #noImageFound>
+    <img src="https://www.lifewire.com/thmb/P856-0hi4lmA2xinYWyaEpRIckw=/1920x1326/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg" alt="Fallbackimage">
+  </ng-template>
+
+
+  <img [src]="imageToShow"
+     alt="Place image title"
+     *ngIf="!isImageLoading; else noImageFound">
+     <input type="file" (change)="onFileSelected($event)">
+     <br/><br/><br/>
+     <input  type="button" value="upload" (click)="onUpload()">
+  <div class="ion-spinner">
+    <ion-spinner name="lines" *ngIf="show"> </ion-spinner>
+  </div>  
+  <!-- <ion-button class="cbtn" (click)="openCamera()" shape="round">
+    Open Camera
+  </ion-button>
+
+  <ion-button class="cbtn" (click)="openGallery()" shape="round">
+    Open Gallery
+  </ion-button>
+
+
+  <img [src]="base64Image">
+
+
+  <ion-button class="cbtn" (click)="uploadImage()" shape="round">
+    Upload Image
+  </ion-button> -->
+  
+</ion-content>

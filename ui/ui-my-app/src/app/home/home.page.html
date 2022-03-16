@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <!-- <ion-button (click)="onClick()" shape="round">
+      Second page
+    </ion-button>
+    <br> -->
+    <app-profile-img></app-profile-img>
+    <app-user-detail *ngFor="let item of sameDataHome" [fromParentData]="item"
+     (itemFromComponent)="fromComponent($event)"></app-user-detail>
+    
+     <ion-footer class="ion-text-footer">
+       <ion-button class="second-page-btn" (click)="onClick()" shape="round">
+         Generate 3D bladder
+       </ion-button>
+     </ion-footer>
+    
+</ion-content>
